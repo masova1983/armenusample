@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AR Restaurant Menu</title>
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/jeromeetienne/ar.js/aframe/build/aframe-ar.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <a-scene embedded arjs>
+        <!-- Marker for AR -->
+        <a-marker preset="hiro">
+            <!-- Menu Items -->
+            <a-entity position="0 0.1 0">
+                <a-text value="Welcome to Our Restaurant" width="2" align="center" color="#FF6347" position="0 0.5 0"></a-text>
+                <!-- Item 1 -->
+                <a-box position="-0.8 0.2 0" depth="0.2" height="0.2" width="0.2" color="#FFA500"></a-box>
+                <a-text value="Margherita Pizza\n$12" width="2" align="center" color="#333" position="-0.8 -0.3 0"></a-text>
+                <!-- Item 2 -->
+                <a-box position="0.8 0.2 0" depth="0.2" height="0.2" width="0.2" color="#32CD32"></a-box>
+                <a-text value="Caesar Salad\n$8" width="2" align="center" color="#333" position="0.8 -0.3 0"></a-text>
+                <!-- Item 3 -->
+                <a-box position="0 0.2 -0.8" depth="0.2" height="0.2" width="0.2" color="#1E90FF"></a-box>
+                <a-text value="Chocolate Lava Cake\n$7" width="2" align="center" color="#333" position="0 -0.3 -0.8"></a-text>
+            </a-entity>
+        </a-marker>
+        <!-- Camera -->
+        <a-entity camera></a-entity>
+    </a-scene>
+</body>
+</html>
